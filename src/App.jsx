@@ -1,7 +1,6 @@
 import { useState, useEffect } from "react";
 import { COLORS } from "./constants/colors";
 import { TECH_STACK } from "./constants/techStack";
-import { TASKS } from "./constants/tasks";
 import { injectStyles } from "./styles/globals";
 import SkillBar from "./components/SkillBar";
 import KanbanBoard from "./components/KanbanBoard";
@@ -18,7 +17,12 @@ const TABS = [
 
 const STATS = [
   { label: "Tasks", value: "10", sub: "3 in progress", color: COLORS.accent },
-  { label: "API Uptime", value: "99.9%", sub: "All systems go", color: COLORS.green },
+  {
+    label: "API Uptime",
+    value: "99.9%",
+    sub: "All systems go",
+    color: COLORS.green,
+  },
   { label: "Commits", value: "142", sub: "This sprint", color: COLORS.amber },
   { label: "Tests", value: "94%", sub: "Coverage", color: COLORS.red },
 ];
@@ -41,9 +45,6 @@ export default function App() {
     const id = setInterval(() => setTime(new Date()), 1000);
     return () => clearInterval(id);
   }, []);
-
-  const totalTasks =
-    TASKS.todo.length + TASKS.inProgress.length + TASKS.done.length;
 
   function renderContent() {
     switch (activeTab) {
@@ -129,9 +130,7 @@ export default function App() {
                 fontSize: 13,
                 fontWeight: 500,
                 color:
-                  activeTab === tab.key
-                    ? COLORS.accent
-                    : COLORS.textSecondary,
+                  activeTab === tab.key ? COLORS.accent : COLORS.textSecondary,
                 userSelect: "none",
               }}
             >

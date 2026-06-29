@@ -1,6 +1,6 @@
 import { useState, useCallback } from "react";
 import { COLORS } from "../constants/colors";
-import { API_ROUTES } from "../constants/apiRoutes";
+import { API_ROUTES, ENDPOINTS } from "../constants/apiRoutes";
 
 const METHOD_COLORS = {
   GET: COLORS.green,
@@ -9,7 +9,8 @@ const METHOD_COLORS = {
   DELETE: COLORS.red,
 };
 
-const ENDPOINTS = ["posts", "users", "todos", "comments"];
+const API_BASE_URL =
+  import.meta.env.VITE_API_BASE_URL ?? "https://jsonplaceholder.typicode.com";
 
 export default function APIPanel() {
   const [selectedEndpoint, setSelectedEndpoint] = useState("posts");
@@ -22,9 +23,7 @@ export default function APIPanel() {
     setError(null);
     setLiveData(null);
     try {
-      const res = await fetch(
-        `https://jsonplaceholder.typicode.com/${selectedEndpoint}?_limit=5`
-      );
+      const res = await fetch(`${API_BASE_URL}/${selectedEndpoint}?_limit=5`);
       if (!res.ok) throw new Error(`HTTP ${res.status}`);
       const json = await res.json();
       setLiveData(json.slice(0, 3));

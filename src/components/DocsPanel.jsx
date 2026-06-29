@@ -1,12 +1,42 @@
 import { COLORS } from "../constants/colors";
 
 const DOCS = [
-  { title: "Getting Started Guide", tag: "Setup", updated: "2 days ago", size: "4.2 KB" },
-  { title: "API Reference", tag: "Backend", updated: "1 day ago", size: "12.8 KB" },
-  { title: "Component Library", tag: "Frontend", updated: "3 days ago", size: "8.1 KB" },
-  { title: "Database Schema", tag: "Backend", updated: "5 days ago", size: "3.4 KB" },
-  { title: "Testing Strategy", tag: "QA", updated: "1 week ago", size: "5.6 KB" },
-  { title: "Deployment Guide", tag: "DevOps", updated: "4 days ago", size: "6.9 KB" },
+  {
+    title: "Getting Started Guide",
+    tag: "Setup",
+    updated: "2 days ago",
+    size: "4.2 KB",
+  },
+  {
+    title: "API Reference",
+    tag: "Backend",
+    updated: "1 day ago",
+    size: "12.8 KB",
+  },
+  {
+    title: "Component Library",
+    tag: "Frontend",
+    updated: "3 days ago",
+    size: "8.1 KB",
+  },
+  {
+    title: "Database Schema",
+    tag: "Backend",
+    updated: "5 days ago",
+    size: "3.4 KB",
+  },
+  {
+    title: "Testing Strategy",
+    tag: "QA",
+    updated: "1 week ago",
+    size: "5.6 KB",
+  },
+  {
+    title: "Deployment Guide",
+    tag: "DevOps",
+    updated: "4 days ago",
+    size: "6.9 KB",
+  },
 ];
 
 export default function DocsPanel() {

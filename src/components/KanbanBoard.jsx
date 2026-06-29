@@ -10,7 +10,9 @@ const COLUMNS = [
 
 export default function KanbanBoard() {
   return (
-    <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr 1fr", gap: 16 }}>
+    <div
+      style={{ display: "grid", gridTemplateColumns: "1fr 1fr 1fr", gap: 16 }}
+    >
       {COLUMNS.map((col) => {
         const items = TASKS[col.key];
         return (
