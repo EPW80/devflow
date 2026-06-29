@@ -1,3 +1,6 @@
+// Endpoints offered in the API Monitor's "Live Fetch" selector.
+export const ENDPOINTS = ["posts", "users", "todos", "comments"];
+
 export const API_ROUTES = [
   { method: "GET", path: "/api/users", status: 200, ms: 45 },
   { method: "GET", path: "/api/tasks", status: 200, ms: 32 },
